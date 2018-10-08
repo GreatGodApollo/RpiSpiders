@@ -64,13 +64,11 @@ leftStageIdent = "LS"
 rightStageIdent = "RS"
 ## End Ident Variables
 
-## MQTT Setup
+## Start MQTT Setup
 legTopic = "QSys/Legs"
 bodyTopic = "QSys/Body"
 serverIP = "localhost" # Change to IP of MQTT Broker
 thisIP = "10.0.0.39" # Change to IP of the spider
-
-## Start MQTT Setup
 
 mqtt_client = mqtt.Client(serverIP, 1883, 60)
 # The callback for when the client receives a CONNACK response from the server.
@@ -264,5 +262,9 @@ backCurtainBut.when_pressed = backCurtain_buttonPress()
 leftStageBut.when_pressed = leftStage_buttonPress()
 rightStageBut.when_pressed = rightStage_buttonPress()
 
+## Button Logic End
+
+
+## Setup Finished!
 print("Body Online")
 mqtt_client.loop_forever
